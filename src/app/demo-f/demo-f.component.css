@@ -1,0 +1,118 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+/* Button Styles */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Form Styles */
+.form-container {
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Field Container Styles */
+.field-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.label {
+  flex: 1;
+}
+
+.input {
+  flex: 2;
+}
+
+
+.delete {
+  background-color: #b9f27c;
+  color: #fff; /* Change to white for better visibility */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #bb2d3b;
+}
+
+/* Preview Section Styles */
+.preview-section {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview-section h2 {
+  color: #007bff;
+}
+
+/* New Field Form Styles */
+.new-field-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.new-field-form label {
+  margin-bottom: 10px;
+}
+
+.new-field-form button {
+  margin-top: 10px;
+}
+
+.labelW{
+  margin-right: 5%;
+
+}
+
+.heading{
+  margin-bottom: 7%;
+}
+.centeredButton{
+ margin-left: 45%;
+}

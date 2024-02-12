@@ -1,0 +1,83 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h2 class="heading">Add New Field </h2>
+
+          <div >
+            <form [formGroup]="newFieldForm" (ngSubmit)="addField()">
+             <div class="field-container">
+              <label class="label" >Type: </label>
+                <select formControlName="type" class="input" (change)="isDropdown()">
+                  <option *ngFor="let option of typeOptions" [value]="option">{{ option }}</option>
+                </select>
+             
+             </div>
+            <div  class="field-container">
+              <label class="label">Label:  </label>
+                <input type="text" formControlName="label" class="input">
+                <!-- <div *ngIf="newFieldForm.get('label').hasError('required')">
+                  Username is required.
+                </div> -->
+            
+            </div>
+            <div *ngIf="isdropdown">
+               <form [formGroup]="optionsForm" (ngSubmit)="submitOptions()">
+                <div  class="field-container">
+                <label class="label">option1</label>
+                <input type="text" name="option1" formControlName="option1">
+              </div>
+              <div  class="field-container">
+                <label class="label">option2</label>
+                <input type="text" name="option2" formControlName="option2">
+                </div>
+                <div  class="field-container">
+                <label class="label">option3</label>
+                <input type="text" name="option3" formControlName="option3"></div>
+
+                <button type="submit" class="centeredButton" >Confirm options</button>
+               </form>
+             </div>
+              <!-- Add validation controls for the new field if needed -->
+
+              <button type="submit" class="centeredButton" [disabled]="isValid">Add Field</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Content before hr on the right half -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2>Preview</h2>
+          <form *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+            <div *ngFor="let control of formStructure" class="field-container">
+              <div class="label">
+                <label>{{control.label}}</label>
+              </div>
+              <div class="input"><div *ngIf="control.type==dropdown">
+                <select  class="input">
+                  <option *ngFor="let option of control.options" [value]="option">{{ option }}</option>
+                </select></div>
+                <!-- <input [type]="control.type" [formControlName]="control.name"> -->
+              </div>
+              <button class="delete" type="button" (click)="deleteField(control.name)">❌</button>
+            </div>
+            <br>
+            <br>
+            <!-- <button type="submit" >Submit</button> -->
+            <br>
+            <button type="submit" (click)="onSubmit()" routerLink="/temp" class="centeredButton">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content after hr on the left half -->
+
+  </div>
+</div>

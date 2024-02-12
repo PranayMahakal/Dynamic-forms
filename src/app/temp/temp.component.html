@@ -1,0 +1,43 @@
+<button class="create" type="button" (click)="newForm()" routerLink="/demo">Create Template</button>
+
+<div class="card-container ">
+<div *ngFor="let dynamicForm of templatesStructure" class="card">
+   
+    
+    <form class="form-container" >
+    <div *ngFor="let control of dynamicForm">
+        <!-- {{control.name}} -->
+        
+        <label>{{control.label}}</label>
+        <div *ngIf="control.type==dropdown">
+            <select formControlName="type" class="input">
+              <option *ngFor="let option of control.options" [value]="option">{{ option }}</option>
+            </select></div>
+            <div *ngIf="control.type!=dropdown">
+        <input [type]="control.type" ></div>
+        
+        <!-- {{control.type}} -->
+       
+    </div>
+    <button  type="button" (click)="useTemplate(dynamicForm)" routerLink="/demo">Edit Template</button>
+</form>
+</div>
+</div>
+
+
+<!-- <div class="fieldContainer">
+    <form >
+        <div *ngFor="let control dynamicForm " class="field-container">
+            <div class="label">
+               
+            </div>
+            <div class="input">
+                <input [type]="control.type" [formControlName]="control.name">
+            </div>
+             <button class="delete" type="button" (click)="deleteField(control.name)">❌</button> 
+        </div>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div> -->
